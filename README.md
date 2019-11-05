@@ -1,1 +1,0 @@
-Python Video Edit Timer
