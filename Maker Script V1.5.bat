@@ -1,0 +1,2 @@
+py makroscript.py 
+cls
