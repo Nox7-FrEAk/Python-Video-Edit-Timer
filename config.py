@@ -1,5 +1,5 @@
 #Ändern von 0 auf 1 wenn angepast auf eigene Key´s
-true = 1
+true = 0
 #Bei normalen keys: "'e'"
 #Bei denn F tasten:'Key.f1'
 s = 'Key.f12'
