@@ -1,0 +1,3 @@
+1.Pythen-3.8.0.exe ausführen und intalieren
+2.Im pynput-master ordner die setup.py ausführen
+3.Maker Skrip.bat ausführen und anweisungen folgen

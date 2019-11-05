@@ -1,6 +1,7 @@
 #Ändern von 0 auf 1 wenn angepast auf eigene Key´s
 true = 1
-#Bei normalen keys: "'e'" bei operatoren 'Key.f3'
+#Bei normalen keys: "'e'"
+#Bei denn F tasten:'Key.f1'
 s = 'Key.f12'
 t = 'Key.f10'
 f = 'Key.f9'
