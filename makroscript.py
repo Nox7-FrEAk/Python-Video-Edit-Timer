@@ -1,4 +1,5 @@
 #Version 1.0 By Nox7-Media @ Julian Schiefer
+#Test
 
 from time import sleep
 import sys
@@ -6,6 +7,7 @@ from pathlib import Path
 from pynput.keyboard import Key, Listener
 from datetime import datetime
 import config
+
 #im Pynput-Master Ordner die "setup.py" datei ausführen
 #"py -m pip install pynput" in der console ausführen
 #keys verteilen
