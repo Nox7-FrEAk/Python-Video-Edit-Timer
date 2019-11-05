@@ -29,9 +29,6 @@ elif config.true == 1:
         print("Datei exestiert")
         f= open(config.dpfad + item,"w+")
     else:
-        #datei erstellen
-        f= open(config.dpfad + item,"w+")
-        print("Datei erstellt:" +item)
         print ("Warter auf start")
 
     #Globale variablen für den Timer
@@ -55,10 +52,13 @@ elif config.true == 1:
                 total = str(total).split(".")[0]
                 f.write("Total Time -> " + str(total) + "\r")
                 f.close()   
-                print("beenden")
+                print("beendet")
                 exit(0)
             else:
-                print("start")
+                print("gestartet")
+                #datei erstellen
+                f= open(config.dpfad + item,"w+")
+                print("Datei erstellt:" +item)
                 ts = datetime.now()
                 ee = 1
                 f.write("Start" + "\r")
