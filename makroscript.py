@@ -1,5 +1,4 @@
 #Version 1.0 By Nox7-Media @ Julian Schiefer
-#Test
 
 from time import sleep
 import sys
