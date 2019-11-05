@@ -11,25 +11,12 @@ import config
 #"py -m pip install pynput" in der console ausführen
 #keys verteilen
 
-#Checken ob eine Datei exestiert und im zweifelsfall erstellen
-now = datetime.now()
-item = now.strftime(config.date)
-item = item + ".txt"
-
-file = Path(config.dpfad + item)
 #Abfrage der Config 
 if config.true == 0:
     print ("Bitte config anpassen")
     sleep (10)
     exit(0)
 elif config.true == 1:
-
-    #Checken ob datei exestiert
-    if file.is_file():
-        print("Datei exestiert")
-        f= open(config.dpfad + item,"w+")
-    else:
-        print ("Warter auf start")
 
     #Globale variablen für den Timer
     global ee,sc
@@ -39,7 +26,7 @@ elif config.true == 1:
     #Keylogger + Magic
     def test(Key):
         #globale Variablen damit die Werte weiter benutzt werden können
-        global ts,tt,te,ee,sc
+        global ts,tt,te,ee,sc,f
 
         #log in eine Variable schreiben
         x = str(Key)
@@ -47,18 +34,26 @@ elif config.true == 1:
         if x == config.s:
             sc = 1
             if ee == 1:
+                #Timer beenden
                 te = datetime.now()
                 total = te - ts
                 total = str(total).split(".")[0]
                 f.write("Total Time -> " + str(total) + "\r")
+                #Schließen der Datei
                 f.close()   
-                print("beendet")
+                #Beenden des Scripts
+                print("beenden")
                 exit(0)
             else:
-                print("gestartet")
-                #datei erstellen
+                #Dateinamen erstellen
+                now = datetime.now()
+                item = now.strftime(config.date)
+                item = item + ".txt"
+                #Datei anlegen
                 f= open(config.dpfad + item,"w+")
                 print("Datei erstellt:" +item)
+                #Timer starten
+                print("start")
                 ts = datetime.now()
                 ee = 1
                 f.write("Start" + "\r")
@@ -75,8 +70,7 @@ elif config.true == 1:
             tt = datetime.now()
             current = tt - ts
             current = str(current).split(".")[0]
-            f.write("Timestamp -> " + str(current) + "\r")
-        #Beenden des Loggings  
+            f.write("Timestamp -> " + str(current) + "\r")  
     
 #Tastatur Logging
 with Listener(on_press=test) as listener:
